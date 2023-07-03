@@ -14,6 +14,21 @@ class LoginPage extends BasePage {
     get submitButton() {
         return $('#login-button')
     }
+
+    async login () {
+        // username and password values
+        const username = 'standard_user';
+        const password = 'secret_sauce';
+
+        // set username
+        await this.usernameInput.setValue(username);
+
+        // set password
+        await this.passwordInput.setValue(password);
+
+        // click submit button
+        await this.submitButton.click();
+    }
 }
 
 export default new LoginPage();

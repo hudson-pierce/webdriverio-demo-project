@@ -7,19 +7,8 @@ describe('Login Page Tests', () => {
     });
 
     it('Login with valid username and password', async () => {
-        // username and password values
-        const username = 'standard_user';
-        const password = 'secret_sauce';
-
-        // set username
-        const test = LoginPage.usernameInput;
-        await test.setValue(username);
-
-        // set password
-        await LoginPage.passwordInput.setValue(password);
-
-        // click submit button
-        await LoginPage.submitButton.click();
+        // Log user in with valid credentials
+        await LoginPage.login();
 
         // assert that user is logged in
         await expect(ProductsPage.productsHeader).toHaveText('Products')
